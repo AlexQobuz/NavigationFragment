@@ -28,16 +28,16 @@ class ListAlbumFragment : Fragment(), View.OnClickListener {
 
         albums = mutableListOf<Album>()
         albums.add(Album("ACDC", "Nouveau album du groupe mythique"))
-        albums.add(Album("ACDC", "Nouveau album du groupe mythique"))
-        albums.add(Album("ACDC", "Nouveau album du groupe mythique"))
-        albums.add(Album("ACDC", "Nouveau album du groupe mythique"))
-        albums.add(Album("ACDC", "Nouveau album du groupe mythique"))
-        albums.add(Album("ACDC", "Nouveau album du groupe mythique"))
-        albums.add(Album("ACDC", "Nouveau album du groupe mythique"))
-        albums.add(Album("ACDC", "Nouveau album du groupe mythique"))
-        albums.add(Album("ACDC", "Nouveau album du groupe mythique"))
-        albums.add(Album("ACDC", "Nouveau album du groupe mythique"))
-        albums.add(Album("ACDC", "Nouveau album du groupe mythique"))
+        albums.add(Album("OffSpring", "Nouveau album du groupe mythique"))
+        albums.add(Album("Metallica", "Nouveau album du groupe mythique"))
+        albums.add(Album("NTM", "Nouveau album du groupe mythique"))
+        albums.add(Album("Dido", "Nouveau album du groupe mythique"))
+        albums.add(Album("Booba", "Nouveau album du groupe mythique"))
+        albums.add(Album("The Rolling Stone", "Nouveau album du groupe mythique"))
+        albums.add(Album("Pink Floyd", "Nouveau album du groupe mythique"))
+        albums.add(Album("Wu-Tang Clan", "Nouveau album du groupe mythique"))
+        albums.add(Album("Dire Strait", "Nouveau album du groupe mythique"))
+        albums.add(Album("Nas", "Nouveau album du groupe mythique"))
 
         adapter = AlbumAdapter(albums, this)
 
@@ -49,6 +49,7 @@ class ListAlbumFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(view: View) {
         if (view.tag != null) {
+            Log.i("AlbumDetailActivity", "Click sur une album de la liste !")
             showAlbumDetail(view.tag as Int)
         }
     }
@@ -60,7 +61,6 @@ class ListAlbumFragment : Fragment(), View.OnClickListener {
         intent.putExtra(AlbumDetailActivity.EXTRA_ALBUM, album)
         intent.putExtra(AlbumDetailActivity.EXTRA_ALBUM_INDEX, -1)
         startActivity(intent)
-
 
     }
 
