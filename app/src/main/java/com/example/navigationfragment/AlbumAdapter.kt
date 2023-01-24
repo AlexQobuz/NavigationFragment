@@ -32,6 +32,8 @@ class AlbumAdapter(val albums: List<Album>, val itemClickListener: OnClickListen
         holder.cardView.tag = position
         holder.titleView.text = album.title
         holder.descritpionView.text = album.description
+
+        holder.itemView.setOnClickListener(itemClickListener)
     }
 
     override fun getItemCount(): Int {

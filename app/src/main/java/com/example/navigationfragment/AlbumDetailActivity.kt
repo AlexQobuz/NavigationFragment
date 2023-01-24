@@ -1,5 +1,6 @@
 package com.example.navigationfragment
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -22,13 +23,18 @@ class AlbumDetailActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_album_detail)
 
-        album = intent.getParcelableExtra<Album>(EXTRA_ALBUM)!!
+        val album = if (Build.VERSION.SDK_INT >= 33) {
+            intent.getParcelableExtra<Album>(EXTRA_ALBUM, Album::class.java)
+        } else {
+            intent.getParcelableExtra<Album>(EXTRA_ALBUM)
+        }
+
         albumIndex = intent.getIntExtra(EXTRA_ALBUM_INDEX, -1)
 
         titleView = findViewById(R.id.title_detail_album) as TextView
         desciptionView = findViewById(R.id.description_album) as TextView
 
-        titleView.text = album.title
+        titleView.text = album!!.title
         desciptionView.text = album.description
 
     }

@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class ListAlbumFragment : Fragment(), View.OnClickListener {
+class ListAlbumFragment : Fragment(), View.OnClickListener  {
 
     lateinit var albums: MutableList<Album>
     lateinit var adapter: AlbumAdapter
@@ -45,6 +45,7 @@ class ListAlbumFragment : Fragment(), View.OnClickListener {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
 
+
     }
 
     override fun onClick(view: View) {
@@ -57,7 +58,7 @@ class ListAlbumFragment : Fragment(), View.OnClickListener {
     fun showAlbumDetail(albumIndex: Int) {
         val album = albums[albumIndex]
 
-        val intent = Intent(MainActivity(), AlbumDetailActivity::class.java)
+        val intent = Intent(requireActivity(), AlbumDetailActivity::class.java)
         intent.putExtra(AlbumDetailActivity.EXTRA_ALBUM, album)
         intent.putExtra(AlbumDetailActivity.EXTRA_ALBUM_INDEX, -1)
         startActivity(intent)

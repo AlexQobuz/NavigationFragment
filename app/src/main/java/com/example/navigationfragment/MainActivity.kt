@@ -15,10 +15,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Toolbar
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
-
         loadFragment(HomeFragment())
         bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
         bottomNav.setOnItemSelectedListener {
@@ -42,7 +38,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     private fun loadFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.container_fragment_home_article, fragment)
+        transaction.replace(R.id.container_fragment, fragment)
         transaction.addToBackStack(HomeFragment().toString())
         transaction.commit()
     }
