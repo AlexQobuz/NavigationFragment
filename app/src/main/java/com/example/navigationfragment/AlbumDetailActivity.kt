@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toolbar
 
 class AlbumDetailActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -22,6 +23,13 @@ class AlbumDetailActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_album_detail)
+
+        // je récupère ma toolbar
+        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar_album_detail)
+        // J'affiche ma toolbar
+        setSupportActionBar(toolbar)
+        // J'affiche le bouton de retour
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val album = if (Build.VERSION.SDK_INT >= 33) {
             intent.getParcelableExtra<Album>(EXTRA_ALBUM, Album::class.java)
