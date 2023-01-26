@@ -16,8 +16,8 @@
         />
 
     <item
-        android:id="@+id/user"
-        android:title="User"
+        android:id="@+id/magasin"
+        android:title="Magasin"
         android:icon="@drawable/ic_user_24"
         />
 

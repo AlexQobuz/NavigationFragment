@@ -1,4 +1,4 @@
-package com.example.navigationfragment
+package com.example.navigationfragment.album
 
 import android.os.Parcel
 import android.os.Parcelable

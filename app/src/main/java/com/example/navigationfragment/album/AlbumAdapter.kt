@@ -1,14 +1,14 @@
-package com.example.navigationfragment
+package com.example.navigationfragment.album
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
-import android.view.View.inflate
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.navigationfragment.R
 
 class AlbumAdapter(val albums: List<Album>, val itemClickListener: OnClickListener)
     : RecyclerView.Adapter<AlbumAdapter.ViewHolder>() {

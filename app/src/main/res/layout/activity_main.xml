@@ -23,6 +23,4 @@
         app:menu="@menu/nav_menu"
         />
 
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

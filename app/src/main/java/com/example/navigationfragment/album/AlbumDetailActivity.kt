@@ -1,11 +1,11 @@
-package com.example.navigationfragment
+package com.example.navigationfragment.album
 
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
-import android.widget.Toolbar
+import com.example.navigationfragment.R
 
 class AlbumDetailActivity : AppCompatActivity(), View.OnClickListener {
 

@@ -2,8 +2,9 @@ package com.example.navigationfragment
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.example.navigationfragment.album.ListAlbumFragment
+import com.example.navigationfragment.magasin.ListArticleFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -27,8 +28,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                     loadFragment(ListAlbumFragment())
                     true
                 }
+                R.id.magasin -> {
+                    loadFragment(ListArticleFragment())
+                    true
+                }
                 else -> {
-                    loadFragment(UserProfilFragment())
                     true
                 }
             }
