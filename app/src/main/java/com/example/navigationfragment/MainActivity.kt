@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                     true
                 }
                 else -> {
+                    loadFragment(HomeFragment())
                     true
                 }
             }

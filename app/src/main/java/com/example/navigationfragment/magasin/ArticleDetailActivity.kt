@@ -4,6 +4,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
 import com.example.navigationfragment.R
 
 class ArticleDetailActivity : AppCompatActivity() {
@@ -23,6 +24,10 @@ class ArticleDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_article_detail)
+
+        val toolbar = findViewById<Toolbar>(R.id.toolbar_article_detail)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val article =  if (Build.VERSION.SDK_INT >= 33) {
             intent.getParcelableExtra<Article>(EXTRA_ARTICLE, Article::class.java)
