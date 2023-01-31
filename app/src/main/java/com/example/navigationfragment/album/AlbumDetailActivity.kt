@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import com.example.navigationfragment.R
+import com.example.navigationfragment.model.Album
 
 class AlbumDetailActivity : AppCompatActivity(), View.OnClickListener {
 

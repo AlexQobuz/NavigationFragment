@@ -1,4 +1,4 @@
-package com.example.navigationfragment.album
+package com.example.navigationfragment.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.navigationfragment.R
+import com.example.navigationfragment.album.AlbumAdapter
+import com.example.navigationfragment.album.AlbumDetailActivity
+import com.example.navigationfragment.model.Album
 
 class ListAlbumFragment : Fragment(), View.OnClickListener  {
 

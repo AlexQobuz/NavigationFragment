@@ -3,8 +3,8 @@ package com.example.navigationfragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.navigationfragment.album.ListAlbumFragment
-import com.example.navigationfragment.magasin.ListArticleFragment
+import com.example.navigationfragment.ui.ListAlbumFragment
+import com.example.navigationfragment.ui.ListArticleFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {

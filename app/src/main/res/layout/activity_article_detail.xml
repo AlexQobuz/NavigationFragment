@@ -14,8 +14,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/teal_700"
+        android:background="@color/oxford_blue"
         app:title="Article"
+        app:titleTextColor="@color/white"
         />
 
     <androidx.cardview.widget.CardView

@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.navigationfragment.R
+import com.example.navigationfragment.model.Article
 
 class ArticleAdapter(val articles: List<Article>, val itemClickListener: View.OnClickListener)
     : RecyclerView.Adapter<ArticleAdapter.ViewHolder>() {

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import com.example.navigationfragment.R
+import com.example.navigationfragment.model.Article
 
 class ArticleDetailActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.example.navigationfragment.magasin
+package com.example.navigationfragment.model
 
 import android.os.Parcel
 import android.os.Parcelable

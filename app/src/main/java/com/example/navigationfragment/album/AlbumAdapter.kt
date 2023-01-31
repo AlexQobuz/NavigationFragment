@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.navigationfragment.R
+import com.example.navigationfragment.model.Album
 
 class AlbumAdapter(val albums: List<Album>, val itemClickListener: OnClickListener)
     : RecyclerView.Adapter<AlbumAdapter.ViewHolder>() {
