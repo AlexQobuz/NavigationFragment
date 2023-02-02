@@ -27,7 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     // Je récupère BottomNavigationView
-    lateinit var bottomNav : BottomNavigationView
+    // lateinit var bottomNav : BottomNavigationView
 
     lateinit var editCityName: EditText
     lateinit var btnSearch: Button
@@ -55,18 +55,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             }
         }
 
-
-
-            /**val url = "https://api.github.com/search/repositories?q=mario+language:kotlin&sort=stars&order=desc"
-
-            doAsync {
-            val result = Request().run()
-            uiThread {
-            repoList.adapter = RepoListAdapter(result)
-            }
-            }*/
-
-
     }
     fun getWeatherByCity(city: String) {
         val retrofit = Retrofit.Builder()
@@ -75,9 +63,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             .build()
 
         val weatherService = retrofit.create(WeatherService::class.java)
-
-
-
         val result = weatherService.getWeatherByCity(city)
 
         result.enqueue(object : Callback<WeatherResult> {
