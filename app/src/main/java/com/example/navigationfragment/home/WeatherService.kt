@@ -1,5 +1,6 @@
-package com.example.navigationfragment
+package com.example.navigationfragment.home
 
+import com.example.navigationfragment.WeatherResult
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
