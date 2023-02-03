@@ -1,8 +1,5 @@
 package com.example.navigationfragment
 
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,12 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.gson.JsonObject
 import com.squareup.picasso.Picasso
-import okhttp3.Request
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -67,14 +59,12 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         result.enqueue(object : Callback<WeatherResult> {
             override fun onResponse(call: Call<WeatherResult>, response: Response<WeatherResult>) {
-                val result = response.body()
-
-
-
-                Picasso.get().load("htpps://openweathermap.org/img/w/${result?.weather!![0]?.icon}.png").into(imageWeather)
-
-                tvTemperature.text = "${result?.main?.temp} °C"
-                tvCityName.text = result.name
+                if(response.isSuccessful) {
+                    val result = response.body()
+                    tvTemperature.text = "${result?.main?.temp} °C"
+                    tvCityName.text = result?.name
+                    Picasso.get().load("htpps://openweathermap.org/img/w/${result?.weather!![0]?.icon}.png").into(imageWeather)
+                }
             }
 
             override fun onFailure(call: Call<WeatherResult>, t: Throwable) {
@@ -98,21 +88,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 }
             }
         }*/
-
-
-
-    /**@RequiresApi(Build.VERSION_CODES.M)
-    private fun isNetworkConnected(): Boolean {
-        //1
-        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        //2
-        val activeNetwork = connectivityManager.activeNetwork
-        //3
-        val networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork)
-        //4
-        return networkCapabilities != null &&
-                networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-    }*/
 
 
     /**private fun loadFragment(fragment: Fragment) {
