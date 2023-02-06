@@ -36,7 +36,7 @@ class HomeFragment : Fragment() {
 
         editCityName.findViewById<EditText>(R.id.editCity)
         btnSearch.findViewById<Button>(R.id.btn_search)
-        imageWeather.findViewById<ImageView>(R.id.image_weather)
+        imageWeather.findViewById<ImageView>(R.id.imageWeather)
         tvTemperature.findViewById<TextView>(R.id.temperature)
         tvCityName.findViewById<TextView>(R.id.city_name)
 
@@ -66,7 +66,7 @@ class HomeFragment : Fragment() {
                     tvTemperature.text = "${result?.main?.temp} °C"
                     tvCityName.text = result?.name
                     Picasso.get()
-                        .load("htpps://openweathermap.org/img/w/${result?.weather!![0]?.icon}.png")
+                        .load("https://openweathermap.org/img/w/${result?.weather!![0]?.icon}.png")
                         .into(imageWeather)
                 }
             }
