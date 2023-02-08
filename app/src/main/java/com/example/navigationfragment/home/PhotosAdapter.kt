@@ -1,5 +1,6 @@
 package com.example.navigationfragment.home
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.navigationfragment.R
 
-class PhotosAdapter(val context: HomeFragment):
+class PhotosAdapter(val context: Context):
     RecyclerView.Adapter<PhotosAdapter.ViewHolder>() {
 
     private val photosList: MutableList<Photo> = mutableListOf()

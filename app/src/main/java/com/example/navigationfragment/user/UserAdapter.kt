@@ -4,21 +4,21 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.navigationfragment.R
 
-class UserAdapter(val context: Context, val usersList: List<User>, val itemClickListener: View.OnClickListener):
+class UserAdapter(val context: Context):
     RecyclerView.Adapter<UserAdapter.ViewHolder>(){
+
+    private val usersList: MutableList<User> = mutableListOf()
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var userId: TextView
         var name: TextView
         var username: TextView
         var email: TextView
-        val cardView = itemView.findViewById<CardView>(R.id.cardview_users)
+        // val cardView = itemView.findViewById<CardView>(R.id.cardview_users)
 
         init {
             userId = itemView.findViewById(R.id.userId)
@@ -40,15 +40,21 @@ class UserAdapter(val context: Context, val usersList: List<User>, val itemClick
         holder.username.text = usersList[position].username
         holder.email.text = usersList[position].email
 
-        val user = usersList[position]
-        holder.cardView.setOnClickListener(itemClickListener)
-        holder.cardView.tag = position
+        // val user = usersList[position]
+        //holder.cardView.setOnClickListener(itemClickListener)
+        //holder.cardView.tag = position
 
 
     }
 
     override fun getItemCount(): Int {
         return usersList.size
+    }
+
+    fun setItems(items: List<User>) {
+        usersList.clear()
+        usersList.addAll(items)
+        notifyDataSetChanged()
     }
 
 }
