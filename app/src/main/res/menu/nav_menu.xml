@@ -10,14 +10,14 @@
         />
 
     <item
-        android:id="@+id/album"
-        android:title="Album"
+        android:id="@+id/posts"
+        android:title="Posts"
         android:icon="@drawable/ic_album_24"
         />
 
     <item
-        android:id="@+id/magasin"
-        android:title="Magasin"
+        android:id="@+id/users"
+        android:title="Users"
         android:icon="@drawable/ic_user_24"
         />
 

@@ -37,12 +37,12 @@
                 android:layout_marginLeft="8dp">
 
                 <TextView
-                    android:id="@+id/userId"
+                    android:id="@+id/postId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:text="User Id"
+                    android:text="Post Id"
                     android:textColor="@color/black"/>
 
                 <TextView
