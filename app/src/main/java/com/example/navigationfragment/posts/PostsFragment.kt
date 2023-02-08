@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.navigationfragment.BASE_URL
-import com.example.navigationfragment.Posts
+import com.example.navigationfragment.Post
 import com.example.navigationfragment.R
 import retrofit2.Call
 import retrofit2.Callback
@@ -55,14 +55,14 @@ class PostsFragment : Fragment() {
 
         val retrofitData = retrofitBuilder.getAllPosts()
 
-        retrofitData.enqueue(object : Callback<List<Posts>> {
-            override fun onResponse(call: Call<List<Posts>>, response: Response<List<Posts>>) {
+        retrofitData.enqueue(object : Callback<List<Post>> {
+            override fun onResponse(call: Call<List<Post>>, response: Response<List<Post>>) {
                 val responseBody = response.body()!!
 
                 myAdapter.setItems(responseBody)
             }
 
-            override fun onFailure(call: Call<List<Posts>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Post>>, t: Throwable) {
                 Log.d("Activity main","Données non reçus ou problème d'affichage"+t.message )
             }
 

@@ -1,6 +1,6 @@
 package com.example.navigationfragment.posts
 
-import com.example.navigationfragment.Posts
+import com.example.navigationfragment.Post
 import retrofit2.Call
 import retrofit2.http.GET
 
@@ -11,6 +11,6 @@ interface PostsInterface {
     }*/
 
     @GET("posts")
-    fun getAllPosts(): Call<List<Posts>>
+    fun getAllPosts(): Call<List<Post>>
 
 }

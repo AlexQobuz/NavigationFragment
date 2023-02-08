@@ -1,6 +1,5 @@
 package com.example.navigationfragment.home
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,8 +7,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.navigationfragment.R
 
-class PhotosAdapter(val context: Context, val photosList: List<Photos>):
+class PhotosAdapter(val context: HomeFragment):
     RecyclerView.Adapter<PhotosAdapter.ViewHolder>() {
+
+    private val photosList: MutableList<Photo> = mutableListOf()
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var photoId: TextView
@@ -38,6 +39,10 @@ class PhotosAdapter(val context: Context, val photosList: List<Photos>):
         return photosList.size
     }
 
-
+    fun setItems(items: List<Photo>) {
+        photosList.clear()
+        photosList.addAll(items)
+        notifyDataSetChanged()
+    }
 
 }
